@@ -3,11 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - FcetAsaba_MVC</title>
-
+    <title>@ViewData["Title"] - FcetAsaba</title>
+    <link href="~/css/megaMenu.css" rel="stylesheet" />
+    <link href="~/css/megaMenu.css" rel="stylesheet" />
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/style.css" />
+        <link href="~/css/table.css" rel="stylesheet" />
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -18,7 +20,7 @@
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+        <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -26,26 +28,175 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">FcetAsaba_MVC</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">
+                    <span> <img src="~/images/logo1.jpg" alt="Logo" height="30" /></span> FCETAsaba
+                </a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li class="nav-item"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" asp-area="" asp-controller="Home" asp-action="#">
+                            About Us<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a asp-area="" asp-controller="Home" asp-action="FCETAsaba">FCETA saba</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Council">Governing Council</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Provost">Provost</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Registrar">Registrar</a></li>
+                            <li class="divider" role="separator">Principal Officers</li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="#">Principal Officers</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="DProvost">Depty Provost</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Deans">Deans</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Directors">Directors</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="HoFDept">Heads of Depaetment</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Academics<b class="caret"></b>
+                        </a>
+                        <div class="dropdown-menu mega-menu" aria-labelledby="navbarDropdown">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="~/images/Education.jpg" height="120" alt="Education" class="img-fluid" />
+                                    <h4 style="color:saddlebrown;font-weight:bold;">School motto</h4>
+                                </div>
+                                <div class="col-md-5 col-sm-5">
+                                    <h4><strong class="Sub-Menu-Heading">School</strong></h4>
+                                    <p class="divider" role="separator"></p>
+                                    <p><a asp-area="" asp-controller="Home" asp-action="SchlOfEduc">School Of Education</a></p>
+                                    <p><a asp-area="" asp-controller="Home" asp-action="BusEdu">School of Business Education</a></p>
+                                    <p><a asp-area="" asp-controller="Home" asp-action="TechEdu">School of Technical Education</a></p>
+                                    <p><a asp-area="" asp-controller="Home" asp-action="VocEdu">School of Vocational Education</a></p>
+                                    <p><a asp-area="" asp-controller="Home" asp-action="CompSciEdu">School of Computer Science Education</a></p>
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <h4><strong class="Sub-Menu-Heading">Programmes</strong></h4>
+                                    <p class="divider" role="separator"></p>
+                                    <p><a asp-area="" asp-controller="Home" asp-action="NCE">NCE</a></p>
+                                    <p><a asp-area="" asp-controller="Home" asp-action="BEd">Business Education</a></p>
+                                    <p><a asp-area="" asp-controller="Home" asp-action="Postgraduate">Postgraduate</a></p>
+                                    <p><a asp-area="" asp-controller="Home" asp-action="Masters">Masters Degree</a></p>
+                                    <p><a asp-area="" asp-controller="Home" asp-action="AcademyDirectorate">Academic Planning Directorate</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            ICT Unit<b class="caret"></b>
+                        </a>
+                        <div class="dropdown-menu mega-menu" aria-labelledby="navbarDropdown">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="~/images/Education.jpg" height="120" alt="Education" class="img-fluid" />
+                                    <h4 style="color:saddlebrown;font-weight:bold;">School motto</h4>
+                                </div>
+                                <div class="col-md-3 col-sm-3">
+                                    <h4><strong class="Sub-Menu-Heading">About</strong></h4>
+                                    <p><a asp-area="" asp-controller="Home" asp-action="ICTUnit">Director of ICT</a></p>
+                                    <p><a asp-area="" asp-controller="Home" asp-action="BizEdu">Business Education</a></p>
+                                    <p><a asp-area="" asp-controller="Home" asp-action="TechEdu">Technical Education</a></p>
+                                    <p><a asp-area="" asp-controller="Home" asp-action="VocEdu">Vocational Education</a></p>
+                                    <p><a asp-area="" asp-controller="Home" asp-action="CompEdu">Computer Science Education</a></p>
+                                </div>
+                                <div class="col-md-3 col-sm-3">
+                                    <h4><strong class="Sub-Menu-Heading">Programmes</strong></h4>
+                                    <p><a asp-area="" asp-controller="Home" asp-action="NCE">NCE</a></p>
+                                    <p><a asp-area="" asp-controller="Home" asp-action="BEd">B.Ed</a></p>
+                                    <p><a asp-area="" asp-controller="Home" asp-action="Postgraduate">Postgraduate</a></p>
+                                    <p><a asp-area="" asp-controller="Home" asp-action="Masters">Masters Degree</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" asp-area="" asp-controller="Home" asp-action="#">
+                            Library<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a asp-area="" asp-controller="Home" asp-action="Librarian">The Librarian</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Journals">Journals</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Books">Books</a></li>
+                            <li class="divider" role="separator"></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="References">References</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Research">Research</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" asp-area="" asp-controller="Home" asp-action="#">
+                            News & Events<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a asp-area="" asp-controller="Home" asp-action="Conferences">Conferences</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="seminar">Seminars</a></li>
+                            <li class="divider" role="separator"></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="workshop">Workshops</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="siwes">SIWES</a></li>
+                            <li class="divider" role="separator"></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Matiriculation">Matiriculation</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Graduation">Graduation</a></li>
+                            <li class="divider" role="separator"></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Convocation">Convocation</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a asp-area="" asp-controller="Home" asp-action="Entrepreneurship">Entrepreneurship</a></li>
+                    <li class="nav-item"><a asp-area="" asp-controller="Home" asp-action="Portal">e-Portal</a></li>
+                    <li class="nav-item"><a asp-area="" asp-controller="Home" asp-action="Admission">Admission</a></li>
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")
             </div>
         </div>
     </nav>
-    <div class="container body-content">
+    <div class=" body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2018 - FcetAsaba_MVC</p>
-        </footer>
     </div>
+    <div class="foot">
+        <div class="container">
+            <h2 class="text-center" style="color:#C0392B;">Contact Us</h2><hr />
+            <div class="row">
+                <div class="col-md-4 col-sm-4">
+                    <h4><b><u>Address/Location:</u></b></h4>
+                    <p>Federal College of Education (Technical)</p>
+                    <p>Permanent Site, Asaba-Ibusa Road,</p>
+                    <p>P. M. B. 1044,</p>
+                    <p>Asaba, Delta State</p>
+                    <p><b>Tel:</b> 056280331</p>
+                    <p><b>Fax:</b> 056280331</p>
+                </div>
+                <div class="col-md-4 col-sm-4">
 
+
+                    <h4><b><u>Email Addresses</u></b></h4>
+                    <ul class="">
+                        <li><i class="far fa-envelope"></i>provost@fcetasb.edu.ng</li>
+                        <li>deputyprovost@fcetasb.edu.ng</li>
+                        <li>registrar@fcetasb.edu.ng</li>
+                        <li>bursar@fcetasb.edu.ng</li>
+                        <li>librarian@fcetasb.edu.ng</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <h4><b><u>Connect With Us</u></b></h4>
+                    <p><a class="#"><i class="fab fa-facebook fa-3x"> </i></a></p>
+                    <p><a class="#"><i class="fab fa-twitter-square fa-3x"></i></a></p>
+                    <p><a class="#"><i class="fab fa-linkedin-in fa-3x"> </i></a></p>
+                    <p><a class="#"><i class="fab fa-instagram fa-3x"> </i></a></p>
+                    <p><a class="#"><i class="fab fa-whatsapp-square fa-3x"> </i></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="text-center padding">
+            Copyright &copy;@DateTime.Now.Year Center for Automotive Technology & Entrepreneurship Development. Powered by:
+            <img src="~/images/Logo3.jpg" />
+            <img src="~/images/BAS LOGO.jpg" />
+        </div>
+    </footer>
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>

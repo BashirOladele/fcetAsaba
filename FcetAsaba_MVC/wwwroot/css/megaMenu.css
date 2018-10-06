@@ -1,0 +1,20 @@
+﻿/* Start of Bootstrap 4 Mega Menu */
+
+
+.mega-menu {
+    width: 800px;
+    overflow: hidden;
+    padding: 10px;
+}
+
+    .mega-menu a {
+        text-decoration: none;
+        color: #040852;
+    }
+
+    .mega-menu Sub-Menu-Heading {
+        color: #784212;
+    }
+.nav-link {
+    font-size: 1.2em !important;
+}
